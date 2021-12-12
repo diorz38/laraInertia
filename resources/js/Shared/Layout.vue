@@ -44,8 +44,8 @@
               </div>
               <div class="relative p-1 flex items-center justify-end w-1/4 ml-5 mr-4 sm:mr-0 sm:right-auto">
                 <a href="#" class="block relative">
-                  <!-- <img alt="profil" v-bind:src="$page.auth.user.avatar" class="mx-auto object-cover rounded-full h-10 w-10" /> -->
-                  <img alt="profil" src="https://i.pravatar.cc/150?u=johndoe@example.com" class="mx-auto object-cover rounded-full h-10 w-10" />
+                  <img alt="profil" v-bind:src="'https://i.pravatar.cc/150?u='+email" class="mx-auto object-cover rounded-full h-10 w-10" />
+                  <!-- <img alt="profil" src="https://i.pravatar.cc/150?u=johndoe@example.com" class="mx-auto object-cover rounded-full h-10 w-10" /> -->
 
                 </a>
               </div>
@@ -90,8 +90,11 @@ export default {
   components: { Nav },
 
   computed: {
-    username() {
-      return this.$page.props.auth.user.username
+    name() {
+      return this.$page.props.auth.user.name
+    },
+    email() {
+      return this.$page.props.auth.user.email
     },
   },
 }

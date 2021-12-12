@@ -58,7 +58,9 @@
                         </p>
                     </td>
                     <td class="px-5 py-3 border-b border-gray-200 bg-white text-sm">
-                      <Link :href="`/users/${user.id}/edit`" class="text-indigo-600 hover:text-indigo-900"> Edit</Link>
+                      <div v-if="$page.props.auth.user.permissions.includes('update.user')">
+                        <Link :href="`/users/${user.id}/edit`" class="text-indigo-600 hover:text-indigo-900"> Edit</Link>
+                      </div>
                     </td>
                 </tr>
                 <tr v-if="users.length === 0">

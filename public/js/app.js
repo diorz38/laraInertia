@@ -245,8 +245,11 @@ __webpack_require__.r(__webpack_exports__);
     Nav: _Nav__WEBPACK_IMPORTED_MODULE_0__["default"]
   },
   computed: {
-    username: function username() {
-      return this.$page.props.auth.user.username;
+    name: function name() {
+      return this.$page.props.auth.user.name;
+    },
+    email: function email() {
+      return this.$page.props.auth.user.email;
     }
   }
 });
@@ -836,21 +839,24 @@ var _hoisted_15 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
 var _hoisted_16 = {
   "class": "px-5 py-3 border-b border-gray-200 bg-white text-sm"
 };
-
-var _hoisted_17 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Edit");
-
-var _hoisted_18 = {
+var _hoisted_17 = {
   key: 0
 };
 
-var _hoisted_19 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", {
+var _hoisted_18 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Edit");
+
+var _hoisted_19 = {
+  key: 0
+};
+
+var _hoisted_20 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", {
   "class": "px-6 py-4 border-t",
   colspan: "4"
 }, "No users found.", -1
 /* HOISTED */
 );
 
-var _hoisted_20 = [_hoisted_19];
+var _hoisted_21 = [_hoisted_20];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_Head = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Head");
 
@@ -873,22 +879,22 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     /* TEXT */
     )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_13, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_14, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(user.role), 1
     /* TEXT */
-    )]), _hoisted_15, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_16, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Link, {
+    )]), _hoisted_15, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_16, [_ctx.$page.props.auth.user.permissions.includes('update.user') ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_17, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Link, {
       href: "/users/".concat(user.id, "/edit"),
       "class": "text-indigo-600 hover:text-indigo-900"
     }, {
       "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-        return [_hoisted_17];
+        return [_hoisted_18];
       }),
       _: 2
       /* DYNAMIC */
 
     }, 1032
     /* PROPS, DYNAMIC_SLOTS */
-    , ["href"])])]);
+    , ["href"])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])]);
   }), 128
   /* KEYED_FRAGMENT */
-  )), $props.users.length === 0 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("tr", _hoisted_18, _hoisted_20)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Pagination"], {
+  )), $props.users.length === 0 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("tr", _hoisted_19, _hoisted_21)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Pagination"], {
     links: $props.users.links,
     "class": "pl-2 my-6 items-center"
   }, null, 8
@@ -1058,13 +1064,30 @@ var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVN
 var _hoisted_7 = {
   "class": "flex flex-col w-full pl-0 md:p-4 md:space-y-4"
 };
-
-var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<header class=\"w-full shadow-lg bg-white dark:bg-gray-700 items-center h-16 rounded-2xl z-40\"><div class=\"relative z-20 flex flex-col justify-center h-full px-3 mx-auto flex-center\"><div class=\"relative items-center pl-1 flex w-full lg:max-w-68 sm:pr-2 sm:ml-0\"><div class=\"container relative left-0 z-50 flex w-3/4 h-auto h-full\"><div class=\"relative flex items-center w-full lg:w-64 h-full group\"><div class=\"absolute z-50 flex items-center justify-center block w-auto h-10 p-3 pr-2 text-sm text-gray-500 uppercase cursor-pointer sm:hidden\"><svg fill=\"none\" class=\"relative w-5 h-5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" stroke=\"currentColor\" viewBox=\"0 0 24 24\"><path d=\"M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z\"></path></svg></div><svg class=\"absolute left-0 z-20 hidden w-4 h-4 ml-4 text-gray-500 pointer-events-none fill-current group-hover:text-gray-400 sm:block\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 20 20\"><path d=\"M12.9 14.32a8 8 0 1 1 1.41-1.41l5.35 5.33-1.42 1.42-5.33-5.34zM8 14A6 6 0 1 0 8 2a6 6 0 0 0 0 12z\"></path></svg><input type=\"text\" class=\"block w-full py-1.5 pl-10 pr-4 leading-normal rounded-2xl focus:border-transparent focus:outline-none focus:ring-2 focus:ring-blue-500 ring-opacity-90 bg-gray-100 dark:bg-gray-800 text-gray-400 aa-input\" placeholder=\"Search\"><div class=\"absolute right-0 hidden h-auto px-2 py-1 mr-2 text-xs text-gray-400 border border-gray-300 rounded-2xl md:block\">+</div></div></div><div class=\"relative p-1 flex items-center justify-end w-1/4 ml-5 mr-4 sm:mr-0 sm:right-auto\"><a href=\"#\" class=\"block relative\"><!-- &lt;img alt=&quot;profil&quot; v-bind:src=&quot;$page.auth.user.avatar&quot; class=&quot;mx-auto object-cover rounded-full h-10 w-10&quot; /&gt; --><img alt=\"profil\" src=\"https://i.pravatar.cc/150?u=johndoe@example.com\" class=\"mx-auto object-cover rounded-full h-10 w-10\"></a></div></div></div></header>", 1);
-
+var _hoisted_8 = {
+  "class": "w-full shadow-lg bg-white dark:bg-gray-700 items-center h-16 rounded-2xl z-40"
+};
 var _hoisted_9 = {
-  "class": "overflow-auto h-screen pb-24 pt-2 pr-2 pl-2 md:pt-0 md:pr-0 md:pl-0"
+  "class": "relative z-20 flex flex-col justify-center h-full px-3 mx-auto flex-center"
 };
 var _hoisted_10 = {
+  "class": "relative items-center pl-1 flex w-full lg:max-w-68 sm:pr-2 sm:ml-0"
+};
+
+var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"container relative left-0 z-50 flex w-3/4 h-auto h-full\"><div class=\"relative flex items-center w-full lg:w-64 h-full group\"><div class=\"absolute z-50 flex items-center justify-center block w-auto h-10 p-3 pr-2 text-sm text-gray-500 uppercase cursor-pointer sm:hidden\"><svg fill=\"none\" class=\"relative w-5 h-5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" stroke=\"currentColor\" viewBox=\"0 0 24 24\"><path d=\"M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z\"></path></svg></div><svg class=\"absolute left-0 z-20 hidden w-4 h-4 ml-4 text-gray-500 pointer-events-none fill-current group-hover:text-gray-400 sm:block\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 20 20\"><path d=\"M12.9 14.32a8 8 0 1 1 1.41-1.41l5.35 5.33-1.42 1.42-5.33-5.34zM8 14A6 6 0 1 0 8 2a6 6 0 0 0 0 12z\"></path></svg><input type=\"text\" class=\"block w-full py-1.5 pl-10 pr-4 leading-normal rounded-2xl focus:border-transparent focus:outline-none focus:ring-2 focus:ring-blue-500 ring-opacity-90 bg-gray-100 dark:bg-gray-800 text-gray-400 aa-input\" placeholder=\"Search\"><div class=\"absolute right-0 hidden h-auto px-2 py-1 mr-2 text-xs text-gray-400 border border-gray-300 rounded-2xl md:block\">+</div></div></div>", 1);
+
+var _hoisted_12 = {
+  "class": "relative p-1 flex items-center justify-end w-1/4 ml-5 mr-4 sm:mr-0 sm:right-auto"
+};
+var _hoisted_13 = {
+  href: "#",
+  "class": "block relative"
+};
+var _hoisted_14 = ["src"];
+var _hoisted_15 = {
+  "class": "overflow-auto h-screen pb-24 pt-2 pr-2 pl-2 md:pt-0 md:pr-0 md:pl-0"
+};
+var _hoisted_16 = {
   "class": "flex flex-col flex-wrap sm:flex-row"
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
@@ -1079,7 +1102,13 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     _: 1
     /* STABLE */
 
-  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("main", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [_hoisted_6, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Nav)])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [_hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.renderSlot)(_ctx.$slots, "default")])])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <section class=\"p-6 bg-gray-200\">\n    <header class=\"flex justify-between\">\n      <div class=\"flex items-center\">\n        <h1 class=\"font-bold text-lg\">\n          My App\n        </h1>\n\n        <p class=\"text-sm ml-4\">\n          Welcome Back, {{ username }}!\n        </p>\n      </div>\n\n      <Nav />\n    </header>\n  </section>\n\n  <section class=\"p-6\">\n    <div class=\"max-w-3xl mx-auto\">\n      <slot />\n    </div>\n  </section> ")], 64
+  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("main", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [_hoisted_6, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Nav)])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("header", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_10, [_hoisted_11, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_12, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", _hoisted_13, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
+    alt: "profil",
+    src: 'https://i.pravatar.cc/150?u=' + $options.email,
+    "class": "mx-auto object-cover rounded-full h-10 w-10"
+  }, null, 8
+  /* PROPS */
+  , _hoisted_14), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <img alt=\"profil\" src=\"https://i.pravatar.cc/150?u=johndoe@example.com\" class=\"mx-auto object-cover rounded-full h-10 w-10\" /> ")])])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_15, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_16, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.renderSlot)(_ctx.$slots, "default")])])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <section class=\"p-6 bg-gray-200\">\n    <header class=\"flex justify-between\">\n      <div class=\"flex items-center\">\n        <h1 class=\"font-bold text-lg\">\n          My App\n        </h1>\n\n        <p class=\"text-sm ml-4\">\n          Welcome Back, {{ username }}!\n        </p>\n      </div>\n\n      <Nav />\n    </header>\n  </section>\n\n  <section class=\"p-6\">\n    <div class=\"max-w-3xl mx-auto\">\n      <slot />\n    </div>\n  </section> ")], 64
   /* STABLE_FRAGMENT */
   );
 }
