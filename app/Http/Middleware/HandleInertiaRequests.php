@@ -43,7 +43,8 @@ class HandleInertiaRequests extends Middleware
             ],
             'auth' => Auth::user() ? [
                 'user' => [
-                    'username' => Auth::user()->name
+                    'name' => Auth::user()->name,
+                    'avatar' => 'https://i.pravatar.cc/150?u='.Auth::user()->email
                 ]
             ] : null
         ]);
