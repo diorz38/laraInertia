@@ -31,7 +31,7 @@
                         <div class="flex items-center">
                             <div class="flex-shrink-0">
                                 <a href="#" class="block relative">
-                                    <img alt="profil" src="https://www.tailwind-kit.com/images/person/8.jpg" class="mx-auto object-cover rounded-full h-10 w-10 "/>
+                                    <img alt="profil" v-bind:src="'https://i.pravatar.cc/150?u=' + user.avatar" class="mx-auto object-cover rounded-full h-10 w-10 "/>
                                 </a>
                             </div>
                             <div class="ml-3">
